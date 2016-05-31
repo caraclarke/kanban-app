@@ -1,0 +1,15 @@
+{
+  "name": "kanban-app",
+  "version": "1.0.0",
+  "description": "Kanban App with React.js and Webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cara Clarke",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
+}
