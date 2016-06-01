@@ -16,6 +16,16 @@ const common = {
   output: {
     path: PATHS.build,
     filename: 'index.js'
+  },
+  module: {
+    loaders: [
+      {
+        // test expects a regexp
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+        include: PATHS.app
+      }
+    ]
   }
 };
 
