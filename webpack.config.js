@@ -65,5 +65,5 @@ if (TARGET == 'start' || !TARGET) {
 }
 
 if (TARGET == 'build') {
-  modue.exports = merge(common, {});
+  module.exports = merge(common, {});
 }
