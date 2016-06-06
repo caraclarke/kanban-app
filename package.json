@@ -7,11 +7,16 @@
     "build": "webpack",
     "start": "webpack-dev-server"
   },
+  "repository": {
+   "type": "git",
+   "url": "git+ssh://git@bitbucket.org:caraclarke/kanban-app.git"
+ },
   "keywords": [],
   "author": "Cara Clarke",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "npm-install-webpack-plugin": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
