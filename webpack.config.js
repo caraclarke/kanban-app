@@ -19,6 +19,14 @@ const common = {
     filename: 'index.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        // define an include so we check just the files we need
+        include: PATHS.app
+      }
+    ],
     loaders: [
       {
         // test expects a regexp

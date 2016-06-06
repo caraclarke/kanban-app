@@ -5,17 +5,21 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
   },
   "repository": {
-   "type": "git",
-   "url": "git+ssh://git@bitbucket.org:caraclarke/kanban-app.git"
- },
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:caraclarke/kanban-app.git"
+  },
   "keywords": [],
   "author": "Cara Clarke",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "eslint": "^2.11.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^5.1.1",
     "npm-install-webpack-plugin": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
