@@ -14,7 +14,6 @@ Debugging will be done by testing locally in the browser, using browser develope
 
 - Set up webpack configuration
 - Create 'Todo' application with 'Notes' as base
-    - *Functionality:*
     - Add new 'Notes'
     - Edit existing 'Notes'
     - Remove 'Notes'
