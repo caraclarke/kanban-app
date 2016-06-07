@@ -10,12 +10,14 @@ Tracking tasks as individuals and as a whole is crucial when planning a project.
 
 This project will be built using React.js, Flux and Webpack.
 
+Debugging will be done by testing locally in the browser, using browser developer tools and eslint.
+
 - Set up webpack configuration
 - Create 'Todo' application with notes as base
 - Add in Flux architecture
 - Add in lanes
 - Add in Drag and Drop
-- Clean and finalize
+- Clean
 
 ## Who do I talk to? ##
 
