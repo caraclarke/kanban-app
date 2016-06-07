@@ -13,11 +13,21 @@ This project will be built using React.js, Flux and Webpack.
 Debugging will be done by testing locally in the browser, using browser developer tools and eslint.
 
 - Set up webpack configuration
-- Create 'Todo' application with notes as base
+- Create 'Todo' application with 'Notes' as base
+  - Functionality:
+    - Add new 'Notes'
+    - Edit existing 'Notes'
+    - Remove 'Notes'
+  - Potential spot to add some basic styling
 - Add in Flux architecture
+  - Actions, stores
+  - Localstorage to avoid losing changes on refresh
 - Add in lanes
+  - 'Lanes' container to render each 'Lane' separately
+  - 'Lane' then renders 'Notes'
+- Potential spot to add in more styling
 - Add in Drag and Drop
-- Clean
+- Style & Clean
 
 ## Who do I talk to? ##
 
