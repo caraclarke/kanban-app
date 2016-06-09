@@ -32,7 +32,7 @@ export default class App extends React.Component {
     return (
       <div>
 
-      <button onCick={this.addNote}>+</button>
+      <button className="add-note" onCick={this.addNote}>+</button>
         <Notes notes={notes}
           onEdit={this.editNote}
           onDelete={this.deleteNote} />
