@@ -1,6 +1,6 @@
 import uuid from 'node-uuid';
 import React from 'react';
-
+import Notes from './Notes.jsx';
 
 export default class App extends React.Component {
 
@@ -31,10 +31,20 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <ul>{notes.map(note =>
-          <li key={note.id}>{note.task}</li>
-        )}</ul>
+
+      <button onCick={this.addNote}>+</button>
+        <Notes notes={notes} />
       </div>
     );
   }
+
+  addNote = () => {
+   this.setState({
+     notes: this.state.notes.concat([{
+       id: uuid.v4(),
+       task: 'New Task'
+     }])
+   });
+  };
+
 }
