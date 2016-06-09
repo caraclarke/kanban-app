@@ -3,17 +3,31 @@ import React from 'react';
 
 
 export default class App extends React.Component {
+
+  constructor(props) {
+      super(props);
+
+      this.state = {
+        notes: [
+          {
+            id: uuid.v4(),
+            task: 'Do Laundry'
+          },
+          {
+            id: uuid.v4(),
+            task: 'Go to CVS'
+          },
+          {
+            id: uuid.v4(),
+            task: 'Check emails'
+          }
+        ]
+      };
+  }
+
   render() {
-    const notes = [
-      {
-        id: uuid.v4(),
-        task: 'Do Laundry'
-      },
-      {
-        id: uuid.v4(),
-        task: 'Go to CVS'
-      }
-    ];
+
+    const notes = this.state.notes;
 
     return (
       <div>
