@@ -33,7 +33,9 @@ export default class App extends React.Component {
       <div>
 
       <button onCick={this.addNote}>+</button>
-        <Notes notes={notes} onEdit={this.editNote} />
+        <Notes notes={notes}
+          onEdit={this.editNote}
+          onDelete={this.deleteNote} />
       </div>
     );
   }
@@ -46,6 +48,15 @@ export default class App extends React.Component {
       }])
     });
   };
+
+  deleteNote = (id, e) => {
+    // avoid bubbling to edit
+    e.stopPropagation();
+
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== id)
+    });
+  }
 
   editNote = (id, task) => {
     // don't modify if trying to set an empty value
