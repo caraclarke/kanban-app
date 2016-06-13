@@ -31,3 +31,4 @@ Debugging will be done by testing locally in the browser, using browser develope
 ## Who do I talk to? ##
 
 * Please contact the repo owner Cara Clarke at cara.clarke8@gmail.com with any questions or comments
+* This project based on [SurviveJS - React](https://github.com/survivejs/react) by [Juho Vepsäläinen](https://github.com/survivejs)
