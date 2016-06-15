@@ -34,7 +34,7 @@ export default class Lane extends Component {
       <div {...props}>
         <div className="lane-header" onClick={this.activateLaneEdit}>
           <div className="lane-add-note">
-            <button onClick={this.addNote}>+</button>
+            <button className="btn btn-success" onClick={this.addNote}>+</button>
           </div>
           <Editable className="lane-name" editing={lane.editing}
             value={lane.name} onEdit={this.editName} />

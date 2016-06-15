@@ -3,6 +3,10 @@ body {
   font-family: sans-serif;
 }
 
+.container {
+  margin-top: 25px;
+}
+
 /* lane style */
 .lane {
   display: inline-block;
@@ -42,18 +46,28 @@ body {
   visibility: visible;
 }
 
-.add-lane, .lane-add-note button {
+/* buttons */
+
+.add-lane {
+  margin-top: 25px;
+  float: left;
   cursor: pointer;
-  background-color: #fdfdfd;
-  border: 1px solid #ccc;
+}
+
+.lane-add-note button {
+  cursor: pointer;
 }
 
 .lane-delete button {
   padding: 0;
   cursor: pointer;
-  color: white;
+  color: red;
   background-color: rgba(0, 0, 0, 0);
   border: 0;
+}
+
+.delete {
+  color: red;
 }
 
 /* notes style */
