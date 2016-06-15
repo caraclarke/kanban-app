@@ -13,13 +13,27 @@ class LaneStore {
     const lanes = this.lanes;
 
     lane.id = uuid.v4();
-
-    // if notes arent provided default to empty array
     lane.notes = lane.notes || [];
 
     this.setState({
       lanes: lanes.concat(lane)
     });
+  }
+
+  attachToLane({laneId, noteId}) {
+    const lanes = this.lanes.map(lane => {
+      if(lane.id === laneId) {
+        if(lane.notes.includes(noteId)) {
+          console.warn('Already attached note to lane', lanes);
+        } else {
+          lane.notes.push(noteId);
+        }
+      }
+
+      return lane;
+    });
+
+    this.setState({lanes});
   }
 }
 

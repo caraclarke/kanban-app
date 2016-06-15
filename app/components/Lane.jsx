@@ -31,18 +31,27 @@ export default class Lane extends Component {
     );
   }
 
-  addNote() {
-    NoteActions.create({task: 'New task'});
+  addNote = (e) => {
+    e.stopPropagation();
+
+    const laneId = this.props.lane.id;
+    const note = NoteActions.create({task: 'New task'});
+
+    LaneActions.attachToLane({
+      noteId: note.id,
+      laneId
+    });
   }
 
   editNote(id, task) {
-    // Don't modify if trying set an empty value
-    if(!task.trim()) {
-      return;
-    }
+   // Don't modify if trying set an empty value
+   if(!task.trim()) {
+     NoteActions.update({id, editing: false});
+     return;
+   }
 
-    NoteActions.update({id, task});
-  }
+   NoteActions.update({id, task, editing: false});
+ }
 
   deleteNote(id, e) {
     e.stopPropagation();
