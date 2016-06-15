@@ -31,10 +31,10 @@ export default class Lane extends Component {
     const {connectDropTarget, lane, ...props} = this.props;
 
     return connectDropTarget(
-      <div {...props} className="col-sm-4">
+      <div {...props} className="col-sm-6">
         <div className="lane-header" onClick={this.activateLaneEdit}>
           <div className="lane-add-note col-sm-4">
-            <button className="btn btn-success" onClick={this.addNote}>+</button>
+            <button className="btn btn-success" onClick={this.addNote}>+ New Task</button>
           </div>
           <Editable className="lane-name col-sm-4" editing={lane.editing}
             value={lane.name} onEdit={this.editName} />

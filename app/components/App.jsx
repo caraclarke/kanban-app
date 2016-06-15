@@ -15,7 +15,7 @@ export default class App extends Component {
 
     return (
       <div>
-        <button type="button" className="add-lane btn btn-success" onClick={this.addLane}>+</button>
+        <button type="button" className="add-lane btn btn-success" onClick={this.addLane}>+ New Lane</button>
         <AltContainer
           stores={[LaneStore]}
           inject={{

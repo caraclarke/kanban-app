@@ -49,8 +49,8 @@ body {
 /* buttons */
 
 .add-lane {
-  margin-top: 25px;
-  float: left;
+  margin: 25px 30px;
+  padding: 10px;
   cursor: pointer;
 }
 
