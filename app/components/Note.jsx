@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {DragSource} from 'react-dnd';
+import ItemTypes from '../constants/itemTypes';
 
-export default class Note extends React.Component {
+const noteSource = {
+  beginDrag(props) {
+    console.log('begin dragging notes ', props);
+
+    return {};
+  }
+};
+
+@DragSource(ItemTypes.NOTE, noteSource, (connect) => ({
+  connectDragSource: connect.dragSource()
+}))
+
+export default class Note extends Component {
 
   render() {
-    return <li {...this.props}>{this.props.children}</li>
+    const {connectDragSource, id, onMove, ...props} = this.props
+
+    return connectDragSource (
+      <li {...props}>{props.children}</li>)
+    ;
   }
 
   renderEdit = () => {
