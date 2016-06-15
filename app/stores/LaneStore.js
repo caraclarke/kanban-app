@@ -35,6 +35,18 @@ class LaneStore {
 
     this.setState({lanes});
   }
+
+  detachFromLane({laneId, noteId}) {
+    const lanes = this.lanes.map((lane) => {
+      if(lane.id === laneId) {
+        lane.note = lane.notes.filter((note) => note !== noteId);
+      }
+
+      return lane;
+    });
+
+    this.setState({lanes});
+  }
 }
 
 export default alt.createStore(LaneStore, 'LaneStore');

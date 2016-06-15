@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Notes from './Notes.jsx';
 import NoteActions from '../actions/NoteActions';
 import NoteStore from '../stores/NoteStore';
+import LaneActions from '../actions/LaneActions';
 
 export default class Lane extends Component {
 
@@ -21,7 +22,7 @@ export default class Lane extends Component {
           <AltContainer
             stores={[NoteStore]}
             inject={{
-              notes: () => NoteStore.getState().notes || []
+              notes: () => NoteStore.getNotesByIds(lane.notes)
             }}
             >
 
@@ -32,8 +33,6 @@ export default class Lane extends Component {
   }
 
   addNote = (e) => {
-    e.stopPropagation();
-
     const laneId = this.props.lane.id;
     const note = NoteActions.create({task: 'New task'});
 
@@ -53,10 +52,14 @@ export default class Lane extends Component {
    NoteActions.update({id, task, editing: false});
  }
 
-  deleteNote(id, e) {
+  deleteNote = (noteId, e) => {
+    // avid bubbling to edit
     e.stopPropagation();
 
-    NoteActions.delete(id);
+    const laneId = this.props.lane.id;
+
+    LaneActions.detachFromLane({laneId, noteId});
+    NoteActions.delete(noteId);
   }
 
 }
