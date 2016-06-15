@@ -5,7 +5,7 @@ import LaneActions from '../actions/LaneActions';
 
 export default ({notes, onValueClick, onEdit, onDelete}) => {
   return (
-    <ul className="notes">{notes.map(note =>
+    <ul className="notes col-sm-12">{notes.map(note =>
         <Note className="note" id={note.id} key={note.id}
           editing={note.editing} onMove={LaneActions.move}>
           <Editable
