@@ -1,20 +1,9 @@
 import React from 'react';
 
 export default class Note extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      editing: false
-    };
-  }
 
   render() {
-    if(this.state.editing) {
-      return this.renderEdit();
-    }
-
-    return this.renderNote();
+    return <li {...this.props}>{this.props.children}</li>
   }
 
   renderEdit = () => {
