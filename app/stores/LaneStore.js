@@ -1,5 +1,6 @@
 import uuid from 'node-uuid';
 import alt from '../libs/alt';
+import update from 'react-addons-update';
 import LaneActions from '../actions/LaneActions';
 
 class LaneStore {
@@ -62,6 +63,31 @@ class LaneStore {
 
       return lane;
     });
+
+    this.setState({lanes});
+  }
+
+  move({sourceId, targetId}) {
+    const lanes = this.lane;
+    const sourceLane = lanes.filter((lane) => lane.notes.includes(sourceId))[0];
+    const targetLane = lanes.filter((lane) => lane.notes.includes(targetId))[0];
+    const sourceNoteIndex = sourceLane.notes.indexOf(sourceId);
+    const targetNoteIndex = targetLane.notes.indexOf(targetId);
+
+    if (sourceLane === targetLane) {
+      // move at once
+      sourceLane.notes = update(sourceLane.notes, {
+        $splice: [
+          [sourceNoteIndex, 1],
+          [targetNoteIndex, 0, sourceId]
+        ]
+      });
+    } else {
+      // get rid of source
+      sourceLane.notes.splice(sourceNoteIndex, 1);
+      // move to target
+      targetLane.notes.splice(targetNoteIndex, 0, sourceId);
+    }
 
     this.setState({lanes});
   }
