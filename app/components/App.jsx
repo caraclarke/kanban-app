@@ -5,7 +5,7 @@ import LaneActions from '../actions/LaneActions';
 import LaneStore from '../stores/LaneStore';
 
 import {DragDropContext} from 'react-dnd';
-import HTML5Backend from 'react-dnd=html5-backend';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 @DragDropContext(HTML5Backend)
 
