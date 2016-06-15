@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Editable extends React.Component {
+export default class Editable extends Component {
 
   render() {
     const {value, onEdit, onValueClick, editing, ...props} = this.props;
