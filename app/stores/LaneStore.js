@@ -10,10 +10,12 @@ class LaneStore {
     this.lanes = [];
   }
 
+  // concat new lane to the list of lanes
   create(lane) {
     const lanes = this.lanes;
 
     lane.id = uuid.v4();
+    // if there are no notes default to empty array
     lane.notes = lane.notes || [];
 
     this.setState({

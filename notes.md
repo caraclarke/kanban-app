@@ -77,8 +77,32 @@ AltContainer
 
 For example, in components/App.jsx we inject notes property into Notes. This way we can set up and manage connections to multiple stores.
 
-Editable / Component relationships
+Component relationships
 ---
+
+1. Lanes which hold a Lane &#x2192; Lane will render itself and Notes
+2. Lanes container will render each Lane separately. Each Lane will render associated Notes
+3. Note as wrapper component &#x2192; accepts Editable component and renders it. This allows us to put Drag and Drop functionality in Note and not duplicate logic into Editable
 
 Drag & Drop
 ---
+
+[React DnD](https://gaearon.github.io/react-dnd/), [HTML5 Drag and Drop based back-end](https://github.com/yahoo/react-dnd-touch-backend) npm packages. To use DragDropContext we need to provide a back-end.
+
+1. Tell ReactDnD what can be dragged and where
+2. constants/itemTypes tracks Note. ReactDnD uses constants to tell different draggable items apart
+
+DragSource and DragTarget
+-----
+
+Marking a component as @DragSource means it can be dragged. connectDragSource prop wraps element at render return.
+
+@DropTarget allows component to receive components annotated with @DragSource.
+
+Back to Drag and Drop
+-----
+
+1. When we begin drag we need to capture Note id
+2. When we hover over target we need Note id
+3. Trigger onMove callback on hover
+4. Lane to Lane uses [splice](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/splice). Splice out source note, splice into target lane

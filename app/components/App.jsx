@@ -7,6 +7,7 @@ import LaneStore from '../stores/LaneStore';
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
+// provide back end to DragDropContext
 @DragDropContext(HTML5Backend)
 
 export default class App extends Component {
