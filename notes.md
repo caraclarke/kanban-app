@@ -6,9 +6,9 @@ These are my notes on topics in [SurviveJS - React](https://github.com/survivejs
 Flux
 ---
 
-Action -> dispatcher -> store -> view
+Action &#x2192; dispatcher &#x2192; store &#x2192; view
 
-1. Actions - concrete operatons we can perform over out data --> NoteActions.create({task: 'Learn React'}). At simplest level actions just pass message to dispatcher as is
+1. Actions - concrete operatons we can perform over out data &#x2192; NoteActions.create({task: 'Learn React'}). At simplest level actions just pass message to dispatcher as is
 2. Dispatcher - as actions are trigger a dispatcher will get notified. The dispatcher deals with possible dependencies between stores. If a certain action needs to happen before another, dispatcher helps us achieve that
 3. Stores - Once dispatcher deals with action, the stores listening to it get triggered. To continue above example, NoteStore gets notified and updates its internal state. Then the store notifies listeners of the new state
 4. View - State changes, view gets updated
@@ -46,8 +46,8 @@ localStorage wrapper
 -----
 libs/storage. js:
 - Using JSON.parse and JSON.stringify for serialization
-- storage.get(k) --> key
-- storage.set(k, v) --> key, value
+- storage.get(k) &#x2192; key
+- storage.set(k, v) &#x2192; key, value
 
 **Using FinalStore from Alt**
 - Alt built-in store called FinalStorage
