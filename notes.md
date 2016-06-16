@@ -73,9 +73,9 @@ libs/persist.js:
 
 AltContainer
 ---
-[AltContainer](http://alt.js.org/docs/components/altContainer/) wrapper simplifies connetion logic. With AltContainer we can bind data to immediate children.
+[AltContainer](http://alt.js.org/docs/components/altContainer/) wrapper simplifies connection logic. With AltContainer we can bind data to immediate children.
 
-For example, in components/App.jsx we inject notes property into Notes. This way we can set up and manage connections to multiple stores.
+For example, in components/App.jsx we inject lanes property into Lanes. This way we can set up and manage connections to multiple stores.
 
 Component relationships
 ---

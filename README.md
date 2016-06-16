@@ -28,6 +28,28 @@ Debugging will be done by testing locally in the browser, using browser develope
 - Add in Drag and Drop
 - Style & Clean
 
+## Installation ##
+
+Install the project by:
+
+```
+$ git clone git@bitbucket.org:caraclarke/kanban-app.git
+$ cd kanban-app/
+
+```
+
+## To view page locally ##
+
+```
+$ npm install
+$ npm start
+```
+
+## Planned next steps ##
+
+1. Drag and drop for lanes
+2. Title and body for notes
+
 ## Who do I talk to? ##
 
 * Please contact the repo owner Cara Clarke at cara.clarke8@gmail.com with any questions or comments
