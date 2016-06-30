@@ -33,7 +33,7 @@ Debugging will be done by testing locally in the browser, using browser develope
 Install the project by:
 
 ```
-$ git clone git@bitbucket.org:caraclarke/kanban-app.git
+$ git clone git@github.com:caraclarke/kanban-app.git
 $ cd kanban-app/
 
 ```
